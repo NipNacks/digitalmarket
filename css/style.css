@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(20deg, #020719 0%, #1a0724 100%);
+    top:0;
+    z-index: 1;
+}
+
+section{
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.image-logo{
+    height: 100px;
+}
+
+.navbar{
+    width: 1500px;
+}
+
+.hero-image{
+    height: 450px;
+    width: 700px;
+}
+
+.stylized-text{
+    font-family: "Shadows Into Light", cursive;
+    font-size: 1.25rem;
+}
+
+.font-size-header{
+    font-size: 4rem;
+}
+
+.font-size-paragraph{
+    font-size: 1.5rem;
+}
+
+.image-brands{
+    height: 200px;
+    width: 300px;
+}
+
+
+/* Animations */
+
+.image{
+    display: block;
+    opacity: 1;
+    transition: 0.2s ease;
+}
+
+.image-fade-animation:hover .image{
+    opacity: 0.5;
+    transform: scale(1.02);
+    filter: brightness(0.5);
+}
+
+.image-fade-animation{
+    position: relative;
+}
+
+.scroll-list-container{
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    mask-image: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+
+.scroll-list-container p:hover{
+    background-color: green;
+}
+
+.scroll-list{
+    display: inline-block;
+    animation: 15s slide infinite linear;
+    padding: 5px 10px;
+    margin: -5px;
+}
+
+@keyframes slide {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+/* Searchbox */
+
+.searchbox-nav{
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 25px;
+    transition: 1.5s ease;
+    overflow: hidden;
+
+    .searchbox-nav-input{
+        display: block;
+        appearance: none;
+        width: 100%;
+
+        border: none;
+        outline: none;
+        border-radius: 50px;
+        background-color: transparent;
+
+        padding-left: 15px;
+        color: transparent;
+        font-size: 22px;
+        cursor: pointer;
+        transition: 1.5s ease;
+    }
+
+    .searchbox-nav-icon {
+        position: absolute;
+        right: calc(25px / 2);
+        top: 50%;
+        bottom: 50%;
+        transform: translate(50%, -50%);
+
+        width: 22px;
+        height: 22px;
+
+        pointer-events: none;
+
+        path{
+            fill: white;
+            transition: 1.5s ease;
+        }
+    }
+
+    &:focus-within{
+        max-width: 300px;
+
+        .searchbox-nav-input{
+            padding-right: 25px;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+        path{
+            fill: rgb(0, 162, 255);
+        }
+    }
+
+}
+
+
+.searchbox-hero{
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 25px;
+    overflow: hidden;
+
+    .searchbox-hero-input{
+        display: block;
+        appearance: none;
+        width: 100%;
+
+        border: none;
+        outline: none;
+        border-radius: 50px;
+        background-color: transparent;
+
+        padding-left: 15px;
+        color: transparent;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .searchbox-hero-icon{
+        position: absolute;
+        right: calc(60px / 2);
+        top: 50%;
+        bottom: 50%;
+        transform: translate(50%, -50%);
+
+        width: 30px;
+        height: 30px;
+
+        pointer-events: none;
+
+        path{
+            fill: white;
+        }
+    }
+
+    &:focus-within{
+
+        .searchbox-hero-input{
+            padding-right: 60px;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+        path{
+            fill: rgb(0, 162, 255);
+        }
+    }
+
+}
+
+.searchbox-hero{
+    max-width: 500px;
+
+    .searchbox-hero-input{
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.8);
+        color: #bbf7d0;
+        background-image: linear-gradient(20deg, #1e293b 0%, #1e293b 100%);
+        font-size: 30px;
+        padding-right: 60px;
+    }
+
+    &:focus-within{
+        .searchbox-hero-input{
+            color: #bbf7d0;
+        }
+    }
+}
+
+
+/*  */
+
+/* MEDIA QUERIES */
+
+@media (max-width: 992px){
+    .nav-center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto 
+    }
+    
+    
+    .hero{
+        font-size: 10px;
+    }
+    
+    .searchbox-hero{
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .center-align-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .scroll{
+        width: 250px;
+    }
+    
+}
+
+/* .card{
+    --bs-card-border-color: blue;
+    --bs-card-title-color: blue;
+    --bs-card-subtitle-color: blue;
+    --bs-card-color: red;
+    --bs-card-bg: black;
+    --bs-card-cap-color: black;
+    --bs-card-cap-bg: black;
+}
+ */
